@@ -72,7 +72,7 @@ show=[TicketBooking("102 Not Out",int(60),1,0),TicketBooking("Hellsing",int(70),
 
 flag = 0
 while flag ==0:
-    choice=int(input("\n\n\nMenu \n\t1.Add a `new show\n\n\t2.Book ticket for a show\n\n\t3.Delete a show\n\n\t4.Booked tickets\n\n\t5.Exit\n\nEnter your choice : "))
+    choice=int(input("\n\n\nMenu \n\t1.Add a new show\n\n\t2.Book ticket for a show\n\n\t3.Delete a show\n\n\t4.Booked tickets\n\n\t5.Exit\n\nEnter your choice : "))
 
 
 
