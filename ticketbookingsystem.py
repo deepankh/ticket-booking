@@ -140,10 +140,13 @@ while flag ==0:
             
      # to exit       
     elif choice==5:
+        
         exit_choice=str(input("Are you sure you want to exit(y/n) : "))
+        
         if exit_choice=="y":
             print("exiting.......")
             flag=1
+            
         elif exit_choice=="n": continue
 
 
