@@ -31,7 +31,7 @@ class TicketBooking:
 
 
 
-    def Printshow(self):
+    def print_show(self):
         message="\n\nTitle = {} \ntotal number of tickets = {} \nbalance tickets are = {} for evening \nbalance tickets are = {} for night ".format(self.title,self.tickets,self.balance_tickets_evening,self.balance_tickets_night)
         return message
 
