@@ -36,25 +36,25 @@ class TicketBooking:
         return message
 
     
-    def PrintTitle(self):
+    def print_title(self):
         return self.title
 
     
-    def Checkbal_eve(self,number):
+    def check_balance_evening(self,number):
         if (number <= self.balance_tickets_evening):
             print(self.book_tickets_evening(number),"for evening show")
         else:
             print("There are not enough tickets ...Please try again with lesser number of tickets")
 
             
-    def Checkbal_night(self,number):
+    def check_balance_night(self,number):
         if (number <= self.balance_tickets_night):
             print(self.book_tickets_night(number),"for night show")
         else:
             print("There are not enough tickets ...Please try again with lesser number of tickets")
 
             
-    def CheckForTiming(self):
+    def check_for_timing(self):
         if self.evening==1 and self.night==1:
             timing =" The timing available are \n\t1. Evening\n\t2. Night"
             return timing
@@ -78,8 +78,8 @@ while flag ==0:
 
     #to add a new show
     if choice==1:
-        temp_title=str(input("\n\n\n enter the title : "))
-        temp_ticket=int(input("\nenter the number of tickets per show : "))
+        temp_title=str(input("\n\n\n enter the title : "))       
+        temp_ticket=int(input("\nenter the number of tickets per show : "))       
         eve=int(input("Is there a evening show??(1) for yes (0)for no : "))
         night=int(input("Is there a night show??(1) for yes (0)for no : "))
         show.append(TicketBooking(temp_title,temp_ticket,eve,night))
@@ -91,18 +91,23 @@ while flag ==0:
     #to book a ticket
     elif choice==2:
         print("The availabe shows are \n")
+        
         for i in range(0,len(show)):
-            print("\n{}. {}".format(i+1,show[i].PrintTitle()))
-        ch=int(input("\n\tEnter your choice : "))
-        print(show[ch-1].CheckForTiming())
-        c=int(input("\n\tEnter your choice : "))
-        tick=int(input("enter the number of tickets : "))
-        if (c==1 and show[ch-1].evening==1):
-            show[ch-1].Checkbal_eve(tick)
-        elif (c==1 and show[ch-1].night==1):
-            show[ch-1].Checkbal_night(tick)
-        if (c==2 and show[ch-1].night==1):
-            show[ch-1].Checkbal_night(tick)
+            print("\n{}. {}".format(i+1,show[i].print_title()))
+            
+        choice_for_show=int(input("\n\tEnter your choice : "))
+        print(show[choice_for_show-1].check_for_timing())
+        choice_for_timing=int(input("\n\tEnter your choice : "))
+        tickets=int(input("Enter the number of tickets : "))
+        
+        if (choice_for_timing==1 and show[choice_for_show-1].evening==1):
+            show[choice_for_show-1].check_balance_evening(tickets)
+            
+        elif (choice_for_timing==1 and show[choice_for_show-1].night==1):
+            show[choice_for_show-1].check_balance_night(tickets)
+            
+        if (choice_for_timing==2 and show[choice_for_show-1].night==1):
+            show[choice_for_show-1].check_balance_night(tickets)
 
 
 
@@ -111,14 +116,18 @@ while flag ==0:
     elif choice==3:
         print("The shows availabe are ")
         for i in range(0,len(show)):
-            print("\n{}. {}".format(i+1,show[i].PrintTitle()))
-        choic=int(input("enter the movie number you want to delete : "))
-        ch=str(input("Are you sure(y/n)"))
-        if ch=='y':
-            temp=show[choic-1].title
-            del show[choic-1]
-            print("deleted..........")
-        elif ch=="n" :continue
+            print("\n{}. {}".format(i+1,show[i].print_title()))
+            
+        delete_movie=int(input("enter the movie number you want to delete : "))
+        delete_choice=str(input("Are you sure(y/n)"))
+        
+        if delete_choice=='y':
+            temp=show[delete_movie-1].title
+            del show[delete_movie-1]
+            print("deleted..........{}".format(temp))
+            
+        elif delete_choice=="n" :
+            continue
 
 
 
@@ -126,16 +135,16 @@ while flag ==0:
     #to print the shows avilabe
     elif choice==4:
         for i in range(0,len(show)):
-            print("\n{}. {}".format(i+1,show[i].Printshow()))
+            print("\n{}. {}".format(i+1,show[i].print_show()))
     
             
      # to exit       
     elif choice==5:
-        ch=str(input("Are you sure you want to exit(y/n) : "))
-        if ch=="y":
+        exit_choice=str(input("Are you sure you want to exit(y/n) : "))
+        if exit_choice=="y":
             print("exiting.......")
             flag=1
-        elif ch=="n": continue
+        elif exit_choice=="n": continue
 
 
 
