@@ -106,8 +106,12 @@ while flag ==0:
             elif (choice_for_timing==1 and show[choice_for_show-1].night==1):
                 show[choice_for_show-1].check_balance_night(tickets)
                 
-            if (choice_for_timing==2 and show[choice_for_show-1].night==1):
+            elif (choice_for_timing==2 and show[choice_for_show-1].night==1):
                 show[choice_for_show-1].check_balance_night(tickets)
+
+            else:
+                print("please enter a proper choice")
+                continue
     
 
 
