@@ -1,0 +1,52 @@
+
+  body  {
+            background-image: url("movies.jpg");
+            background-color: #cccccc;
+          //  background-repeat: no-repeat;
+            /* height: auto;
+            width: auto; */
+            background-size: cover;
+
+        }
+  #myDIV {
+          width: 100%;
+        //  padding: 50px 0;
+
+          margin-left: 10px;
+          margin-top: 150px;
+        }
+  .first {
+          text-align: center;
+          color: #fff;
+         }
+  #loginform {
+          margin-left: 580px;
+          margin-top: 100px;
+
+  }
+  #MyButton {
+          margin-left: 1390px;
+          margin-top: 540px;
+  }
+  .textbox {
+          height:20px;
+          font-size:14pt;
+      }
+  .buttonclass {
+         font-family: Arial,Helvetica,sans-serif;
+         font-size: 16px;
+         //height: 30px;
+         border-radius: 5px;
+         border-width: thin;
+      }
+  .buttonclass:hover {
+      color: #ae1208;
+      background:#444;
+      transition: 0.5s all;
+      cursor: pointer;
+      border-width: 0;
+    }
+  .option-box{
+        height: 20px;
+        font-size: 11pt;
+  }

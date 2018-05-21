@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div align=center>
+      <h1><strong>Mass Ticket Booking</strong></h1>
+      <hr>
+    </div>
+    <div id="loginform">
+
+        <font size=5 color="yellow">
+
+        <table  cellspacing="10" cellpadding='10'>
+
+            <tr>
+
+              <td>Movie Name : </td>
+              <td>
+              <select id="movie-id" class="option-box">
+                <option value="NULL">-SELECT-</option>
+                <option value="Avengers Infinity War">Avengers infinity war</option>
+                <option value="Hellsing">hellsing</option>
+                <option value="102 Not Out!">102 Not Out!</option>
+
+              </select>
+            </td>
+            </tr>
+            <tr>
+
+              <td>Number Of Tickets : </td>
+              <td>
+              <input type="text" name="number-of-tickets" value="" id="number-id">
+            </td>
+
+            </tr>
+            <tr>
+
+              <td>Timing : </td>
+              <td>
+              <select id="timing-id" class="option-box" class="option-box">
+                <option value="NULL">-SELECT-</option>
+                <option value="Morning">Morning</option>
+                <option value="Evening">Evening</option>
+                <option value="Night">Night</option>
+              </select>
+            </td>
+            </tr>
+
+            <tr>
+              <td>  </td>
+              <td >
+                    <button type="submit" name="submit" value="submit" class="buttonclass" onclick="completion()">
+                       Submit
+                    </button>
+
+              </td>
+            </tr>
+
+      </table>
+      </font>
+
+    </div>
+    <script type="text/javascript">
+      function completion(){
+        var movie=document.getElementById('movie-id').value;
+        var number=document.getElementById('number-id').value;
+        var timing=document.getElementById('timing-id').value;
+        alert("Order Summary\n\n\t Movie Name : "+movie+"\n\t Number of ticket(s) : "+number+"\n\t Show time : "+timing);
+      }
+
+    </script>
+  </body>
+</html>
